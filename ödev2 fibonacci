@@ -1,0 +1,33 @@
+using System;
+using System.Collections;
+using System.Linq;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int fibocount = 1;
+        int i = 2;
+        Console.WriteLine("fibo sayını gir");
+        fibocount = Convert.ToInt32(Console.ReadLine());
+        int [] myNum = new int[fibocount];
+        myNum[0] = 0;
+        myNum[1] = 1;
+
+        while (i < fibocount)
+        {
+
+            myNum[i] = myNum[i - 2] + myNum[i - 1];
+            i++;
+
+        }
+        foreach (var item in myNum)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+
+
+
+----------------------------------------------------------------------------------------------------------
