@@ -1,0 +1,3 @@
+# BackEndBootcampWithCSharp
+
+Kalıtım nesneye dayalı programlamada ki en büyük etkendir. Projede tanımladığımız bir class başka bir class veya interface'den ihtiyaca göre inheret olabilir ve böylelikle bir nevi oop'nin faydalarından yararlanmış oluruz. Ancak bazen yazmış olduğumuz bir class'ın başka class'lara kalıtım vermesini istemeyebiliriz. Neden böyle bir şeye ihtiyaç duyalım ki dersek genellikle security konularından dolayı böyle bir durum söz konusu olabilir. C# tarafında bu ihtiyacımızı karşılayacak olan sealed  keyword'ü bulunmaktadır. Eğer bir class sealed tanımlanırsa bu class alt class'lara kalıtım veremez.
