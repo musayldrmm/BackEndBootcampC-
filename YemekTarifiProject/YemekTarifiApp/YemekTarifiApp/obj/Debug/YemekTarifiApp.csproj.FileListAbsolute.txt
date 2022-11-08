@@ -1,0 +1,15 @@
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\bin\Debug\YemekTarifiApp.exe.config
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\bin\Debug\YemekTarifiApp.exe
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\bin\Debug\YemekTarifiApp.pdb
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\bin\Debug\EntityFramework.dll
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\bin\Debug\EntityFramework.xml
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\obj\Debug\YemekTarifiApp.csproj.AssemblyReference.cache
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\obj\Debug\YemekTarifiApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\obj\Debug\YemekTarifiApp.csproj.CoreCompileInputs.cache
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\obj\Debug\YemekTarifiApp.csproj.CopyComplete
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\obj\Debug\YemekTarifiApp.exe
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\obj\Debug\YemekTarifiApp.pdb
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\obj\Debug\YemekTarifiApp.Migrations.Test.resources
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiApp\YemekTarifiApp\obj\Debug\YemekTarifiApp.csproj.GenerateResource.cache
