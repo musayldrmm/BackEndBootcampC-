@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\YemekTarifiApp",
+    "\\YemekTarifiApp\\YemekTarifiApp",
+    "\\YemekTarifiApp\\YemekTarifiApp\\Service"
   ],
+  "SelectedNode": "\\YemekTarifiApp\\YemekTarifiApp\\Service\\CommentService.cs",
   "PreviewInSolutionExplorer": false
 }
