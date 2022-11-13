@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+
+namespace FactoryMethodCSharp
+{
+    abstract class Drink {  public abstract string GetName(); }
+
+    class TeaDrink : Drink  {  public override string GetName() => "Lipton"; }
+
+    class CoffeDrink : Drink { public override string GetName() => "Jacobs"; }
+
+    class PepsiDrink : Drink { public override string GetName() => "Pepsi"; }
+
+    abstract class Creator { public abstract Drink FactoryMethod(); }
+
+    class CreatorTeaDrink : Creator { public override Drink FactoryMethod() => new TeaDrink(); }
+
+    class CreatorCoffeDrink : Creator { public override Drink FactoryMethod() => new CoffeDrink(); }
+
+    class CreatorPepsiDrink : Creator { public override Drink FactoryMethod() => new PepsiDrink(); }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Creator> creators = new List<Creator>()
+            {
+                new CreatorTeaDrink(),
+                new CreatorCoffeDrink(),
+                new CreatorPepsiDrink()
+            };
+
+            foreach (var item in creators)
+                Console.WriteLine(item.FactoryMethod().GetName());
+
+            Console.Read();
+        }
+    }
+}
