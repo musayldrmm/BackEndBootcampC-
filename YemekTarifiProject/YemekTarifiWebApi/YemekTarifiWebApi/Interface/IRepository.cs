@@ -7,7 +7,7 @@ using YemekTarifiWebApi.Model;
 
 namespace YemekTarifiWebApi.Interface
 {
-    internal interface IRepository<TEntity> where TEntity : BaseEntity
+    public interface IRepository<TEntity> where TEntity : BaseEntity
     {
       IQueryable<TEntity> GetAll();
 

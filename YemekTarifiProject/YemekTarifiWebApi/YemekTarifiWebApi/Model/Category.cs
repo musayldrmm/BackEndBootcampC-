@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YemekTarifiWebApi.Model
 {
-    internal class Category
+    public class Category:BaseEntity
     {
         public int Id { get; set; }
 

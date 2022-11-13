@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YemekTarifiWebApi.Model
 {
-    internal class LoginRequest
+    public class LoginRequest
     {
 
         public string Email { get; set; }

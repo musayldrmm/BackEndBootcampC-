@@ -1,7 +1,7 @@
 ﻿
 namespace YemekTarifiWebApi.Model
 {
-    internal class Comment :BaseEntity
+    public class Comment :BaseEntity
     {
         public int Id { get; set; }
 
