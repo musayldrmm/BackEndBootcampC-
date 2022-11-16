@@ -1,11 +1,13 @@
 ﻿
 using YemekTarifiWebApi.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace YemekTarifiApp.Context
 {
     public class BackEndContext : DbContext
     {
+     
         public BackEndContext(DbContextOptions<BackEndContext>options) : base(options)
         {
 
@@ -18,26 +20,32 @@ namespace YemekTarifiApp.Context
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
+       {
+    //        modelBuilder.Entity<Comment>()
+    //            .HasOne<User>(s => s.User)  
+    //            .WithMany(g => g.Comments)
+    //            .HasForeignKey(s => s.UserId)
+    //            .OnDelete(DeleteBehavior.ClientCascade);
+
+
+    //        modelBuilder.Entity<Comment>()
+    //       .HasOne<Product>(s => s.Product)
+    //       .WithMany(g => g.Comments)
+    //       .HasForeignKey(s => s.ProductId)
+    //       .OnDelete(DeleteBehavior.ClientCascade);
+
+
+
+    //        modelBuilder.Entity<Product>()
+    //       .HasOne<User>(s => s.User)
+    //       .WithMany(g => g.Products)
+    //       .HasForeignKey(s => s.UserId)
+    //       .OnDelete(DeleteBehavior.ClientCascade);
+       }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            modelBuilder.Entity<Comment>()
-                .HasOne<User>(s => s.User)
-                .WithMany(g => g.Comments)
-                .HasForeignKey(s => s.UserId)
-                .OnDelete(DeleteBehavior.ClientNoAction);
-
-
-            modelBuilder.Entity<Comment>()
-           .HasOne<Product>(s => s.Product)
-           .WithMany(g => g.Comments)
-           .HasForeignKey(s => s.ProductId)
-           .OnDelete(DeleteBehavior.ClientNoAction);
-
-
-            modelBuilder.Entity<Product>()
-           .HasOne<User>(s => s.User)
-           .WithMany(g => g.Products)
-           .HasForeignKey(s => s.UserId)
-           .OnDelete(DeleteBehavior.ClientNoAction);
+            
+          optionsBuilder.UseLazyLoadingProxies();
         }
     }
 }

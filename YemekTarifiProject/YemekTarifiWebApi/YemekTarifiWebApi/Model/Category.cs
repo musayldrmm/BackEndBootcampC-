@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,8 @@ namespace YemekTarifiWebApi.Model
     {
         public int Id { get; set; }
 
-        public string CategoryName { get; set; }
-
-        public ICollection<Product> Products { get; set; }
+        public string? CategoryName { get; set; }
+        [JsonIgnore]
+        public virtual List<Product>? Products { get; set; }
     }
 }

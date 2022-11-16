@@ -30,7 +30,7 @@ namespace YemekTarifiWebApi.Controller
         [HttpGet("{id}")]
         public Task<Comment> Get(int id)
         {
-            return _commentRepository.GetById(id);
+            return _commentRepository.GetByIdComment(id);
         }
 
         // POST api/<UserController>

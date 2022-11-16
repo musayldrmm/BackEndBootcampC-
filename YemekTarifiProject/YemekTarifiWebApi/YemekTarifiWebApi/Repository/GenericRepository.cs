@@ -22,9 +22,9 @@ namespace YemekTarifiWebApi.Repository
 
        
 
-        public IQueryable<TEntity> GetAll()
+        public List<TEntity> GetAll()
         {
-            return _dbContext.Set<TEntity>().AsNoTracking();
+            return _dbContext.Set<TEntity>().ToList();
         }
 
         public async Task<TEntity> GetById(int id)

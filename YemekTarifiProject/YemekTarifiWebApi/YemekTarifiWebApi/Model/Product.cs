@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -23,10 +24,15 @@ namespace YemekTarifiWebApi.Model
         public bool IsDeleted { get; set; }
 
         public int UserId { get; set; }
-        public User User { get; set; }
 
-        public ICollection<Category> Categories { get; set; }
+        [ForeignKey("UserId")]
+        public virtual User? User { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public virtual Category? Category { get; set; }
+
+        [JsonIgnore]
+        public virtual ICollection<Comment>? Comments { get; set; }
     }
 }

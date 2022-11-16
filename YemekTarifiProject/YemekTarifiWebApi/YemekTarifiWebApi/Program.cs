@@ -19,19 +19,23 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddSwaggerGenNewtonsoftSupport();
+builder.Services.AddControllersWithViews().AddNewtonsoftJson();
+
 
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello");
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
+app.UseSwagger();
+//app.UseSwaggerUI(c =>
+//{
+//    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Test1 Api v1");
+//    c.RoutePrefix = string.Empty;
+//});
+app.UseSwaggerUI();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

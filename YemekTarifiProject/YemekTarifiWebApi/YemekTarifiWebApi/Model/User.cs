@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -24,8 +25,9 @@ namespace YemekTarifiWebApi.Model
 
         public DateTime BirthDate { get; set; }
 
-        public ICollection<Product> Products { get; set; }
-
-        public ICollection<Comment> Comments { get; set; } 
+        [JsonIgnore]
+        public virtual ICollection<Product>? Products { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<Comment>? Comments { get; set; } 
     }
 }

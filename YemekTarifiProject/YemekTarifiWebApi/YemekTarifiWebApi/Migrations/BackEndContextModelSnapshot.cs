@@ -17,25 +17,10 @@ namespace YemekTarifiWebApi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.11")
+                .HasAnnotation("ProductVersion", "6.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("CategoryProduct", b =>
-                {
-                    b.Property<int>("CategoriesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CategoriesId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("CategoryProduct");
-                });
 
             modelBuilder.Entity("YemekTarifiWebApi.Model.Category", b =>
                 {
@@ -46,8 +31,16 @@ namespace YemekTarifiWebApi.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("CategoryName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -98,6 +91,9 @@ namespace YemekTarifiWebApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
@@ -119,6 +115,8 @@ namespace YemekTarifiWebApi.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("UserId");
 
@@ -170,33 +168,18 @@ namespace YemekTarifiWebApi.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("CategoryProduct", b =>
-                {
-                    b.HasOne("YemekTarifiWebApi.Model.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("YemekTarifiWebApi.Model.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("YemekTarifiWebApi.Model.Comment", b =>
                 {
                     b.HasOne("YemekTarifiWebApi.Model.Product", "Product")
                         .WithMany("Comments")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.ClientNoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("YemekTarifiWebApi.Model.User", "User")
                         .WithMany("Comments")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientNoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Product");
@@ -206,13 +189,26 @@ namespace YemekTarifiWebApi.Migrations
 
             modelBuilder.Entity("YemekTarifiWebApi.Model.Product", b =>
                 {
+                    b.HasOne("YemekTarifiWebApi.Model.Category", "Categories")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("YemekTarifiWebApi.Model.User", "User")
                         .WithMany("Products")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientNoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Categories");
+
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("YemekTarifiWebApi.Model.Category", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("YemekTarifiWebApi.Model.Product", b =>

@@ -1,0 +1,7 @@
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\obj\Debug\net5.0\YemekTarifiWebApi.csproj.AssemblyReference.cache
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\obj\Debug\net5.0\YemekTarifiWebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\obj\Debug\net5.0\YemekTarifiWebApi.AssemblyInfoInputs.cache
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\obj\Debug\net5.0\YemekTarifiWebApi.AssemblyInfo.cs
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\obj\Debug\net5.0\YemekTarifiWebApi.csproj.CoreCompileInputs.cache
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\obj\Debug\net5.0\YemekTarifiWebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\obj\Debug\net5.0\YemekTarifiWebApi.MvcApplicationPartsAssemblyInfo.cache

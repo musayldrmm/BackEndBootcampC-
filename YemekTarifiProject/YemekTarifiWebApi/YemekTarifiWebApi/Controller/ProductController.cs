@@ -12,16 +12,17 @@ namespace YemekTarifiWebApi.Controller
     {
 
         private readonly IProductRepository _productRepository;
-
-        public ProductController(IProductRepository productRepository)
+        private readonly IUserRepository _userRepository;
+        public ProductController(IProductRepository productRepository,IUserRepository userRepository)
         {
             _productRepository = productRepository;
+            _userRepository = userRepository;
         }
 
 
         // GET: api/<UserController>
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public List<Product> Get()
         {
             return _productRepository.GetAll(); 
         }
@@ -30,15 +31,17 @@ namespace YemekTarifiWebApi.Controller
         [HttpGet("{id}")]
         public Task<Product> Get(int id)
         {
-            return _productRepository.GetById(id);
+            return _productRepository.GetByIdProduct(id);
         }
 
         // POST api/<UserController>
         [HttpPost]
         public Task Post([FromBody] Product value)
         {
-            return _productRepository.Create(value);
+           return _productRepository.Create(value);
         }
+
+     
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
