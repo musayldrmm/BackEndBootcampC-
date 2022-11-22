@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using YemekTarifiWebApi.Dto;
 using YemekTarifiWebApi.Interface;
 using YemekTarifiWebApi.Model;
 
@@ -12,10 +14,12 @@ namespace YemekTarifiWebApi.Controller
     {
 
         private readonly ICommentRepository _commentRepository;
+        private readonly IMapper _mapper;
 
-        public CommentController(ICommentRepository commentRepository)
+        public CommentController(ICommentRepository commentRepository,IMapper mapper)
         {
             _commentRepository = commentRepository;
+            _mapper = mapper;
         }
 
 
@@ -35,16 +39,19 @@ namespace YemekTarifiWebApi.Controller
 
         // POST api/<UserController>
         [HttpPost]
-        public Task Post([FromBody] Comment value)
+        public Task Post([FromBody] CommentDto value)
         {
-            return _commentRepository.Create(value);
+            Comment comment = _mapper.Map<Comment>(value);
+            return _commentRepository.Create(comment);
         }
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public Task Put(int id, [FromBody] Comment value)
+        public Task Put(int id, [FromBody] CommentDto value)
         {
-           return _commentRepository.Update(id, value);
+            Comment comment = _mapper.Map<Comment>(value);
+            comment.Id = id;
+            return _commentRepository.Update(comment);
         }
 
         // DELETE api/<UserController>/5

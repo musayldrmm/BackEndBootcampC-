@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using YemekTarifiWebApi.Dto;
 using YemekTarifiWebApi.Interface;
 using YemekTarifiWebApi.Model;
 
@@ -12,10 +14,12 @@ namespace YemekTarifiWebApi.Controller
     {
 
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IMapper _mapper;
 
-        public CategoryController(ICategoryRepository categoryRepository)
+        public CategoryController(ICategoryRepository categoryRepository,IMapper mapper)
         {
             _categoryRepository = categoryRepository;
+            _mapper=mapper;
         }
 
 
@@ -35,16 +39,19 @@ namespace YemekTarifiWebApi.Controller
 
         // POST api/<UserController>
         [HttpPost]
-        public Task Post([FromBody] Category value)
+        public Task Post([FromBody] CategoryDto value)
         {
-            return _categoryRepository.Create(value);
+            Category category = _mapper.Map<Category>(value);
+            return _categoryRepository.Create(category);
         }
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public Task Put(int id, [FromBody] Category value)
+        public Task Put(int id, [FromBody] CategoryDto value)
         {
-           return _categoryRepository.Update(id, value);
+            Category category = _mapper.Map<Category>(value);
+            category.Id = id;
+            return _categoryRepository.Update(category);
         }
 
         // DELETE api/<UserController>/5

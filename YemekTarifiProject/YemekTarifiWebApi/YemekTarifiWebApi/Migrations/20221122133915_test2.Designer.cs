@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using YemekTarifiApp.Context;
 
@@ -11,9 +12,10 @@ using YemekTarifiApp.Context;
 namespace YemekTarifiWebApi.Migrations
 {
     [DbContext(typeof(BackEndContext))]
-    partial class BackEndContextModelSnapshot : ModelSnapshot
+    [Migration("20221122133915_test2")]
+    partial class test2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

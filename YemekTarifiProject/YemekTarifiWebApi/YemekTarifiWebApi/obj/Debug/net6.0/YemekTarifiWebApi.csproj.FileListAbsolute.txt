@@ -65,3 +65,5 @@ C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTar
 C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\obj\Debug\net6.0\YemekTarifiWebApi.pdb
 C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\obj\Debug\net6.0\YemekTarifiWebApi.genruntimeconfig.cache
 C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\obj\Debug\net6.0\ref\YemekTarifiWebApi.dll
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\musay\OneDrive\Masaüstü\YemekTarifiProject\YemekTarifiWebApi\YemekTarifiWebApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

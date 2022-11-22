@@ -24,16 +24,16 @@ namespace YemekTarifiWebApi.Repository
 
         public List<TEntity> GetAll()
         {
-            return _dbContext.Set<TEntity>().ToList();
+            return _dbContext.Set<TEntity>().Where(u=>u.IsDeleted==false).ToList();
         }
 
         public async Task<TEntity> GetById(int id)
         {
-            return await _dbContext.Set<TEntity>()
+            return await _dbContext.Set<TEntity>().Where(u => u.IsDeleted == false)
                           .AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public async Task Update(int id, TEntity entity)
+        public async Task Update(TEntity entity)
         {
             _dbContext.Set<TEntity>().Update(entity);
             await _dbContext.SaveChangesAsync();

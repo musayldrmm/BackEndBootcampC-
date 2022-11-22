@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "o58fv77G/YuAFq1zFKxHLa8xd7l7Sa9/W8N0zrpgQcHHT0v2FxGABj4SNJnRf5ptQ24F7G8cXnKRhSjcBJL7bg==",
+  "dgSpecHash": "+tfCDBFF6IZagFpWNp/is5/9PU1WFQABKgR1bhx1xA+pyqFePUlY/g/+6rGG+zjmaZ0qt6w9pzL76Rsy7wB7fQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\musay\\OneDrive\\Masaüstü\\YemekTarifiProject\\YemekTarifiWebApi\\YemekTarifiWebApi\\YemekTarifiWebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\musay\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\musay\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\musay\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\musay\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\musay\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.0-rc.1.21452.15\\microsoft.aspnetcore.jsonpatch.6.0.0-rc.1.21452.15.nupkg.sha512",

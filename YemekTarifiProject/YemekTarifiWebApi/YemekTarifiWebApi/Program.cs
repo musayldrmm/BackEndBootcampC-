@@ -21,6 +21,7 @@ builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddSwaggerGenNewtonsoftSupport();
 builder.Services.AddControllersWithViews().AddNewtonsoftJson();
+builder.Services.AddAutoMapper(typeof(Program));
 
 
 
@@ -32,7 +33,7 @@ var app = builder.Build();
 app.UseSwagger();
 //app.UseSwaggerUI(c =>
 //{
-//    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Test1 Api v1");
+//   c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Test1 Api v1");
 //    c.RoutePrefix = string.Empty;
 //});
 app.UseSwaggerUI();

@@ -16,7 +16,7 @@ namespace YemekTarifiWebApi.Repository
 
         public async Task<Product> GetByIdProduct(int id)
         {
-            return await _dbContext.Set<Product>().Include(c=>c.User).Include(d=>d.Category)
+            return await _dbContext.Set<Product>().Where(u => u.IsDeleted == false).Include(c=>c.User).Include(d=>d.Category)
                          .AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
         }
     }

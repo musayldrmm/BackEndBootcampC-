@@ -9,8 +9,6 @@ namespace YemekTarifiWebApi.Model
 {
     public class Category:BaseEntity
     {
-        public int Id { get; set; }
-
         public string? CategoryName { get; set; }
         [JsonIgnore]
         public virtual List<Product>? Products { get; set; }

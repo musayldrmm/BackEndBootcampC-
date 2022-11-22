@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using YemekTarifiWebApi.Dto;
 using YemekTarifiWebApi.Interface;
 using YemekTarifiWebApi.Model;
 
@@ -11,10 +14,12 @@ namespace YemekTarifiWebApi.Controller
     {
 
         private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
 
-        public UserController(IUserRepository userRepository)
+        public UserController(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
+            _mapper = mapper;
         }
 
 
@@ -22,7 +27,7 @@ namespace YemekTarifiWebApi.Controller
         [HttpGet]
         public IEnumerable<User> Get()
         {
-            return _userRepository.GetAll(); 
+            return _userRepository.GetAll();
         }
 
         // GET api/<UserController>/5
@@ -34,23 +39,26 @@ namespace YemekTarifiWebApi.Controller
 
         // POST api/<UserController>
         [HttpPost]
-        public Task Post([FromBody] User value)
+        public Task Post([FromBody] UserDto value)
         {
-            return _userRepository.Create(value);
+            var user = _mapper.Map<User>(value);
+            return _userRepository.Create(user);
         }
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public Task Put(int id, [FromBody] User value)
+        public Task Put(int id, [FromBody] UserDto value)
         {
-           return _userRepository.Update(id, value);
+            User user = _mapper.Map<User>(value);
+            user.Id = id;
+            return _userRepository.Update(user);
         }
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
         public Task Delete(int id)
         {
-           return _userRepository.Delete(id);
+            return _userRepository.Delete(id);
         }
     }
 }

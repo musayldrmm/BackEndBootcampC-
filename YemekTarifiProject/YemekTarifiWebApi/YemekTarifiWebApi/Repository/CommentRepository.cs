@@ -17,7 +17,7 @@ namespace YemekTarifiWebApi.Repository
 
         public async Task<Comment> GetByIdComment(int id)
         {
-            return  _dbContext.Set<Comment>().Include(c => c.User).Include(d => d.Product)
+            return  _dbContext.Set<Comment>().Where(u => u.IsDeleted == false).Include(c => c.User).Include(d => d.Product)
                          .ToList().FirstOrDefault(e => e.Id == id);
         }
     }
